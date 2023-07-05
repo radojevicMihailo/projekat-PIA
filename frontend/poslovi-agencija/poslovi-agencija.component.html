@@ -1,0 +1,58 @@
+<button (click)="odjava()">Odjavi se</button>
+<p>
+    <a routerLink="/agencija">Profil</a> || <a routerLink="/radnici">Radnici</a> ||
+    <a routerLink="/promenaLozinke">Promena lozinke</a>
+</p>
+<h2>Poslovi</h2>
+<h3>Zahtevi</h3>
+<table>
+    <tr>
+        <th>Klijent</th>
+        <th>Objekat</th>
+        <th></th>
+        <th>Ponuda (Euro)</th>
+    </tr>
+    <tr *ngFor="let z of zahtevi">
+        <td>{{ z.klijentIme }}</td>
+        <td>{{ z.objekat }}</td>
+        <td>
+            <button (click)="prihvati(z)">Prihvati</button>
+            <button (click)="odbi(z.idP)">Odbi</button>
+        </td>
+        <td>
+            <input type="number" [(ngModel)]="z.ponuda" />
+        </td>
+    </tr>
+</table>
+{{ poruka }}
+<h3>Aktivni poslovi</h3>
+<table>
+    <tr>
+        <th>Klijent</th>
+        <th>Objekat</th>
+        <th>Skica</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let p of poslovi">
+        <td>{{ p.klijentIme }}</td>
+        <td>{{ p.objekat }}</td>
+        <td>
+            <button (click)="prikazi(p.objekatId)">Prikazi</button>
+        </td>
+        <td>
+            <button (click)="promeni(p.objekatId)">Promeni</button>
+        </td>
+    </tr>
+</table>
+<canvas #canvas></canvas>
+<!--<table [hidden]="!prikazForma">
+    <tr *ngFor="let p of objekat.skica">
+        <td>status:</td>
+        <td>
+            <input type="text" [(ngModel)]="p.status" />
+        </td>
+        <td>
+            <button (click)="promeniStatus(p)">Promeni</button>
+        </td>
+    </tr>
+</table>-->

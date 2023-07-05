@@ -1,0 +1,42 @@
+Dobrodosli na stranicu {{ agencija.naziv }} <br />
+<button (click)="nazad()">Nazad</button>
+<h3>Ocene i komentari</h3>
+<table>
+    <tr>
+        <th>Klijent</th>
+        <th>Ocena</th>
+        <th>Komentar</th>
+    </tr>
+    <tr *ngFor="let p of poslovi">
+        <td>{{ p.klijent }}</td>
+        <td>{{ p.ocena }}</td>
+        <td>{{ p.komentar }}</td>
+    </tr>
+</table>
+<br />
+<h2>Zahtev za saradnju</h2>
+<table>
+    <tr>
+        <th>Objekat:</th>
+        <td>
+            <select [(ngModel)]="objekat">
+                <option *ngFor="let o of objekti" value="{{ o.id }}">
+                    {{ o.tip }}, {{ o.adresa }}, {{ o.brojProstorija }} prostorije,
+                    {{ o.kvadratura }} m2
+                </option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th>Vremenski period:</th>
+        <td>
+            <input type="text" [(ngModel)]="vreme" />
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button (click)="posalji()">Posalji</button>
+        </td>
+    </tr>
+</table>
+{{ poruka }}

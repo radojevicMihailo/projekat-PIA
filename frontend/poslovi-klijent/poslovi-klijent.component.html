@@ -1,0 +1,65 @@
+<button (click)="odjava()">Odjavi se</button>
+<p>
+    <a routerLink="/klijent">Profil</a> || <a routerLink="/objekti">Objekti</a> ||
+    <a routerLink="/agencije">Agencije</a> ||
+    <a routerLink="/promenaLozinke">Promena lozinke</a>
+</p>
+<h2>Poslovi</h2>
+<button (click)="prikazZavrseniPoslovi()">Zavrseni poslovi</button>
+<button (click)="prikazAktivniPoslovi()">Aktivni poslovi</button>
+<button (click)="prikazZahtevi()">Zahtevi za saradnju</button>
+
+<table [hidden]="!prikaz1">
+    <h4>Zavrseni poslovi</h4>
+    <tr>
+        <th>Objekat</th>
+        <th>Ocena</th>
+        <th>Komentar</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let p of zavrseniPoslovi">
+        <td>{{ p.objekat }}</td>
+        <td [hidden]="p.ocena == 0">{{ p.ocena }}</td>
+        <td [hidden]="p.ocena == 0">{{ p.komentar }}</td>
+        <td>
+            <button [hidden]="p.ocena == 0">Oceni</button>
+            <button [hidden]="p.ocena != 0">Obrisi</button>
+        </td>
+    </tr>
+</table>
+<table [hidden]="!prikaz2">
+    <h4>Aktivni poslovi</h4>
+    <tr>
+        <th>Objekat</th>
+        <th>Skica</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let p of aktivniPoslovi">
+        <td>{{ p.objekat }}</td>
+        <td>
+            <button (click)="prikazi(p.objekatId)">Prikazi</button>
+        </td>
+        <td>
+            <button>Otkazi</button>
+        </td>
+    </tr>
+</table>
+<table [hidden]="!prikaz3">
+    <h4>Zahtevi za saradnju</h4>
+    <tr>
+        <th>Objekat</th>
+        <th>Ponuda (Euro)</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let p of zahtevi">
+        <td [class.crveno]="p.status == 4" [class.zeleno]="p.status == 1">
+            {{ p.objekat }}
+        </td>
+        <td>{{ p.ponuda }}</td>
+        <td [hidden]="p.status == 4">
+            <button>Prihvati</button>
+            <button>Odbi</button>
+        </td>
+    </tr>
+</table>
+<canvas #canvas [hidden]="!prikaz2"></canvas>

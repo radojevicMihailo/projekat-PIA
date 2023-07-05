@@ -1,0 +1,27 @@
+<h2>Prijava u sistem</h2>
+<table>
+    <tr>
+        <td>Korisnicko ime:</td>
+        <td>
+            <input type="text" name="korIme" [(ngModel)]="korIme" />
+        </td>
+    </tr>
+    <tr>
+        <td>Lozinka:</td>
+        <td>
+            <input type="password" name="lozinka" [(ngModel)]="lozinka" />
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button (click)="prijava()">Prijavi se</button>
+        </td>
+    </tr>
+</table>
+<p class="greska">{{ poruka }}</p>
+<br />
+Kliknite ovde da bi se registrovali kao <a routerLink="/registracijaKlijent">klijent</a>. <br />
+Kliknite ovde da bi se registrovali kao <a routerLink="/registracijaAgencija">agencija</a>.
+<br />
+Kliknite ovde da bi koristili sistem kao
+<a routerLink="/neregistrovani">neregistrovani korisnik</a>.

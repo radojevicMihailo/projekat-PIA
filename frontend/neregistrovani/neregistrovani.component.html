@@ -1,0 +1,49 @@
+<button (click)="nazad()">Nazad</button>
+<h2>Agencije</h2>
+<h4>Pretraga</h4>
+<table>
+    <tr>
+        <td>Naziv:</td>
+        <td>
+            <input type="text" [(ngModel)]="nazivPretraga" />
+        </td>
+    </tr>
+    <tr>
+        <td>Adresa:</td>
+        <td>
+            <input type="text" [(ngModel)]="adresaPretraga" />
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button (click)="pretraga()">Pretrazi</button>
+        </td>
+    </tr>
+</table>
+<br />
+<table border="1">
+    <tr>
+        <th>Logotip</th>
+        <th>
+            Naziv
+            <button (click)="nazivno()">&#x2191;</button>
+            <button (click)="nazivnr()">&#x2193;</button>
+        </th>
+        <th>
+            Opis
+            <button (click)="opisno()">&#x2191;</button>
+            <button (click)="opisnr()">&#x2193;</button>
+        </th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let a of agencije">
+        <td>
+            <img src="/assets/korisnici/{{ a.logotip }}" />
+        </td>
+        <td>{{ a.naziv }}</td>
+        <td>{{ a.opis }}</td>
+        <td>
+            <button (click)="komentari(a.korIme)">Komentari</button>
+        </td>
+    </tr>
+</table>

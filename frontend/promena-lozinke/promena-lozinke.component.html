@@ -1,0 +1,32 @@
+<button (click)="odjava()">Odjavi se</button>
+<p>
+    <a routerLink="/klijent">Profil</a> || <a routerLink="/objekti">Objekti</a> ||
+    <a routerLink="/agencije">Agencije</a> || <a routerLink="/posloviKlijent">Poslovi</a>
+</p>
+<h2>Promena lozinke</h2>
+<table>
+    <tr>
+        <th>Stara lozinka:</th>
+        <td>
+            <input type="password" [(ngModel)]="stara_loz" />
+        </td>
+    </tr>
+    <tr>
+        <th>Nova lozinka:</th>
+        <td>
+            <input type="password" [(ngModel)]="nova_loz" />
+        </td>
+    </tr>
+    <tr>
+        <th>Potvrda nove lozinke:</th>
+        <td>
+            <input type="password" [(ngModel)]="nova_loz_pot" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button (click)="promeni()">Promeni</button>
+        </td>
+    </tr>
+</table>
+<p class="greska">{{ poruka }}</p>

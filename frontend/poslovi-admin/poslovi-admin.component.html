@@ -1,0 +1,45 @@
+<button (click)="odjava()">Odjavi se</button>
+<p>
+    <a routerLink="/admin">Korisnici</a> ||
+    <a routerLink="/promenaLozinke">Promena lozinke</a>
+</p>
+<h2>Aktivni poslovi</h2>
+<table>
+    <tr>
+        <th>Klijent</th>
+        <th>Objekat</th>
+        <th>Agencija</th>
+        <th>Skica</th>
+        <th>Vreme</th>
+        <th>Ponuda</th>
+    </tr>
+    <tr *ngFor="let p of aktivni">
+        <td>{{ p.klijentIme }}</td>
+        <td>{{ p.objekat }}</td>
+        <td>{{ p.agencijaNaziv }}</td>
+        <td>
+            <button (click)="prikazi(p.objekatId)">Prikazi</button>
+        </td>
+        <td>{{ p.vreme }}</td>
+        <td>{{ p.ponuda }}</td>
+    </tr>
+</table>
+<canvas #canvas></canvas>
+<h2>Zavrseni poslovi</h2>
+<table>
+    <tr>
+        <th>Klijent</th>
+        <th>Objekat</th>
+        <th>Agencija</th>
+        <th>Ocena</th>
+        <th>Komentar</th>
+    </tr>
+    <tr *ngFor="let p of zavrseni">
+        <td>{{ p.klijentIme }}</td>
+        <td>{{ p.objekat }}</td>
+        <td>{{ p.agencijaNaziv }}</td>
+        <td>{{ p.ocena }}</td>
+        <td>{{ p.komentar }}</td>
+    </tr>
+</table>
+<h2>Zahtevi za otkazivanje</h2>

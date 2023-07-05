@@ -1,0 +1,71 @@
+<button (click)="odjava()">Odjavi se</button>
+<p>
+    <a routerLink="/klijent">Profil</a> || <a routerLink="/agencije">Agencije</a> ||
+    <a routerLink="/posloviKlijent">Poslovi</a> ||
+    <a routerLink="/promenaLozinke">Promena lozinke</a>
+</p>
+<h2>Objekti</h2>
+<table class="text-center">
+    <tr>
+        <th>Tip objekta</th>
+        <th>Adresa</th>
+        <th>Broj prostorija</th>
+        <th>Kvadratura</th>
+        <th>Skica</th>
+        <th>Opcije</th>
+    </tr>
+    <tr *ngFor="let o of objekti">
+        <td>{{ o.tip }}</td>
+        <td>{{ o.adresa }}</td>
+        <td>{{ o.brojProstorija }}</td>
+        <td>{{ o.kvadratura }}</td>
+        <td>
+            <button (click)="prikaziSkicu(o)">Prikazi</button>
+        </td>
+        <td>
+            <button (click)="izmeniObjekat(o)">Izmeni</button> <br />
+            <button (click)="obrisiObjekat(o)">Obrisi</button>
+        </td>
+    </tr>
+</table>
+<canvas #canvas></canvas>
+<h3>Unesite novi objekat</h3>
+<table>
+    <tr>
+        <th>Tip objekta:</th>
+        <td>
+            <input type="radio" name="tip" value="stan" [(ngModel)]="tip" /> stan
+            <input type="radio" name="tip" value="kuca" [(ngModel)]="tip" /> kuca
+        </td>
+    </tr>
+    <tr>
+        <th>Adresa:</th>
+        <td>
+            <input type="text" [(ngModel)]="adresa" />
+        </td>
+    </tr>
+    <tr>
+        <th>Broj prostorija:</th>
+        <td>
+            <input type="number" [(ngModel)]="brojProstorija" />
+        </td>
+        <td>
+            <button (click)="unesi()">Unesi</button>
+        </td>
+    </tr>
+    <tr>
+        <th>Kvadratura:</th>
+        <td>
+            <input type="number" [(ngModel)]="kvadratura" />
+        </td>
+    </tr>
+    <tr>
+        <td>Unos objekta preko JSON fajla:</td>
+        <td>
+            <input type="file" (change)="ucitajJSON($event)" accept=".json" />
+        </td>
+        <td>
+            <button (click)="unesiJSON()">Unesi</button>
+        </td>
+    </tr>
+</table>
