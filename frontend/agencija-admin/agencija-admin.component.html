@@ -1,0 +1,69 @@
+<button (click)="nazad()">Nazad</button>
+<h2>Registracija</h2>
+<table>
+    <tr>
+        <th>Korisnicko ime:</th>
+        <td>
+            <input type="text" [(ngModel)]="korIme" />
+        </td>
+    </tr>
+    <tr>
+        <th>Lozinka:</th>
+        <td>
+            <input type="password" [(ngModel)]="lozinka" />
+        </td>
+    </tr>
+    <tr>
+        <th>Potvrda lozinke:</th>
+        <td>
+            <input type="password" [(ngModel)]="lozinkaPotvrda" />
+        </td>
+    </tr>
+    <tr>
+        <th>Kontakt telefon:</th>
+        <td>
+            <input type="text" [(ngModel)]="telefon" />
+        </td>
+    </tr>
+    <tr>
+        <th>Email adresa:</th>
+        <td>
+            <input type="text" [(ngModel)]="email" />
+        </td>
+    </tr>
+    <tr>
+        <th>Naziv agencije:</th>
+        <td>
+            <input type="text" [(ngModel)]="naziv" />
+        </td>
+    </tr>
+    <tr>
+        <th>Adresa agencije:</th>
+        <td>
+            <input type="text" placeholder="Drzava, grad, ulica broj" [(ngModel)]="adresa" />
+        </td>
+    </tr>
+    <tr>
+        <th>Maticni broj:</th>
+        <td>
+            <input type="number" [(ngModel)]="maticniBroj" />
+        </td>
+    </tr>
+    <tr>
+        <th>Opis:</th>
+        <td>
+            <textarea [(ngModel)]="opis"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <th>Logotip:</th>
+        <td>
+            <input type="file" accept=".jpeg, .jpg, .png" (change)="izabranFajl($event)" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button (click)="dodaj()">Dodaj</button>
+        </td>
+    </tr>
+</table>

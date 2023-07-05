@@ -1,0 +1,172 @@
+<button (click)="odjava()">Odjavi se</button>
+<p>
+    <a routerLink="/posloviAdmin">Poslovi</a> ||
+    <a routerLink="/promenaLozinke">Promena lozinke</a>
+</p>
+<h2>Klijenti</h2>
+<table *ngFor="let k of klijenti">
+    <tr>
+        <th>Ime:</th>
+        <td>
+            <input type="text" [(ngModel)]="k.ime" />
+        </td>
+    </tr>
+    <tr>
+        <th>Prezime:</th>
+        <td><input type="text" [(ngModel)]="k.prezime" /></td>
+    </tr>
+    <tr>
+        <th>Telefon:</th>
+        <td><input type="text" [(ngModel)]="k.telefon" /></td>
+    </tr>
+    <tr>
+        <th>Email:</th>
+        <td><input type="text" [(ngModel)]="k.email" /></td>
+    </tr>
+    <tr>
+        <th>Korisnicko ime:</th>
+        <td>{{ k.korIme }}</td>
+    </tr>
+    <tr>
+        <th>Profilna slika:</th>
+        <td>
+            <img src="/assets/korisnici/{{ k.profilnaSlika }}" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button (click)="azurirajK(k)">Azuriraj</button>
+        </td>
+        <td>
+            <button (click)="odbi(k.korIme)">Obrisi</button>
+        </td>
+    </tr>
+</table>
+<a routerLink="/klijentAdmin">Dodaj novog klijenta</a>
+<h2>Agencije</h2>
+<table *ngFor="let a of agencije">
+    <tr>
+        <th>Naziv:</th>
+        <td><input type="text" [(ngModel)]="a.naziv" /></td>
+    </tr>
+    <tr>
+        <th>Adresa:</th>
+        <td><textarea [(ngModel)]="a.adresa" rows="1" cols="60"></textarea></td>
+    </tr>
+    <tr>
+        <th>Maticni broj:</th>
+        <td><input type="number" [(ngModel)]="a.maticniBroj" /></td>
+    </tr>
+    <tr>
+        <th>Opis:</th>
+        <td><textarea [(ngModel)]="a.opis" rows="4" cols="60"></textarea></td>
+    </tr>
+    <tr>
+        <th>Telefon:</th>
+        <td><input type="text" [(ngModel)]="a.telefon" /></td>
+    </tr>
+    <tr>
+        <th>Email:</th>
+        <td><input type="text" [(ngModel)]="a.email" /></td>
+    </tr>
+    <tr>
+        <th>Korisnicko ime:</th>
+        <td>{{ a.korIme }}</td>
+    </tr>
+    <tr>
+        <th>Logotip:</th>
+        <td>
+            <img src="/assets/korisnici/{{ a.logotip }}" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button (click)="azurirajA(a)">Azuriraj</button>
+        </td>
+        <td>
+            <button (click)="odbi(a.korIme)">Obrisi</button>
+        </td>
+    </tr>
+</table>
+<a routerLink="/agencijaAdmin">Dodaj novu agenciju</a>
+<h2>Zahtevi za registraciju</h2>
+<table *ngFor="let k of registracijeKlijenti">
+    <tr>
+        <th>Ime:</th>
+        <td>{{ k.ime }}</td>
+    </tr>
+    <tr>
+        <th>Prezime:</th>
+        <td>{{ k.prezime }}</td>
+    </tr>
+    <tr>
+        <th>Telefon:</th>
+        <td>{{ k.telefon }}</td>
+    </tr>
+    <tr>
+        <th>Email:</th>
+        <td>{{ k.email }}</td>
+    </tr>
+    <tr>
+        <th>Korisnicko ime:</th>
+        <td>{{ k.korIme }}</td>
+    </tr>
+    <tr>
+        <th>Profilna slika:</th>
+        <td>
+            <img src="/assets/korisnici/{{ k.profilnaSlika }}" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button (click)="odobri(k.korIme)">Odobri</button>
+        </td>
+        <td>
+            <button (click)="odbi(k.korIme)">Odbi</button>
+        </td>
+    </tr>
+</table>
+<table *ngFor="let a of registracijeAgencije">
+    <tr>
+        <th>Naziv:</th>
+        <td>{{ a.naziv }}</td>
+    </tr>
+    <tr>
+        <th>Adresa:</th>
+        <td>{{ a.adresa }}</td>
+    </tr>
+    <tr>
+        <th>Maticni broj:</th>
+        <td>{{ a.maticniBroj }}</td>
+    </tr>
+    <tr>
+        <th>Opis:</th>
+        <td>{{ a.opis }}</td>
+    </tr>
+    <tr>
+        <th>Telefon:</th>
+        <td>{{ a.telefon }}</td>
+    </tr>
+    <tr>
+        <th>Email:</th>
+        <td>{{ a.email }}</td>
+    </tr>
+    <tr>
+        <th>Korisnicko ime:</th>
+        <td>{{ a.korIme }}</td>
+    </tr>
+    <tr>
+        <th>Logotip:</th>
+        <td>
+            <img src="/assets/korisnici/{{ a.logotip }}" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button (click)="odobri(a.korIme)">Odobri</button>
+        </td>
+        <td>
+            <button (click)="odbi(a.korIme)">Odbi</button>
+        </td>
+    </tr>
+</table>

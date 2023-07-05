@@ -1,0 +1,58 @@
+<button (click)="nazad()">Nazad</button>
+<h2>Dodaj novog korisnika</h2>
+<table>
+    <tr>
+        <th>Korisnicko ime:</th>
+        <td>
+            <input type="text" [(ngModel)]="korIme" />
+        </td>
+    </tr>
+    <tr>
+        <th>Lozinka:</th>
+        <td>
+            <input type="password" [(ngModel)]="lozinka" />
+        </td>
+    </tr>
+    <tr>
+        <th>Potvrda lozinke:</th>
+        <td>
+            <input type="password" [(ngModel)]="lozinkaPotvrda" />
+        </td>
+    </tr>
+    <tr>
+        <th>Ime:</th>
+        <td>
+            <input type="text" [(ngModel)]="ime" />
+        </td>
+    </tr>
+    <tr>
+        <th>Prezime:</th>
+        <td>
+            <input type="text" [(ngModel)]="prezime" />
+        </td>
+    </tr>
+    <tr>
+        <th>Kontakt telefon:</th>
+        <td>
+            <input type="text" [(ngModel)]="telefon" />
+        </td>
+    </tr>
+    <tr>
+        <th>Email adresa:</th>
+        <td>
+            <input type="text" [(ngModel)]="email" />
+        </td>
+    </tr>
+    <tr>
+        <th>Profilna slika:</th>
+        <td>
+            <input type="file" accept=".jpeg, .jpg, .png" (change)="izabranFajl($event)" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button (click)="dodaj()">Dodaj</button>
+        </td>
+    </tr>
+</table>
+<p class="greska">{{ poruka }}</p>

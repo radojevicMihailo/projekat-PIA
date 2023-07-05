@@ -1,0 +1,13 @@
+Dobrodosli na stranicu {{ agencija.naziv }} <br />
+<button (click)="nazad()">Nazad</button>
+<h3>Ocene i komentari</h3>
+<table>
+    <tr>
+        <th>Ocena</th>
+        <th>Komentar</th>
+    </tr>
+    <tr *ngFor="let p of poslovi">
+        <td>{{ p.ocena }}</td>
+        <td>{{ p.komentar }}</td>
+    </tr>
+</table>

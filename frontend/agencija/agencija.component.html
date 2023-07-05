@@ -1,0 +1,56 @@
+<button (click)="odjava()">Odjavi se</button>
+<p>
+    <a routerLink="/radnici">Radnici</a> || <a routerLink="/posloviAgencija">Poslovi</a> ||
+    <a routerLink="/promenaLozinke">Promena lozinke</a>
+</p>
+<h2>Profil</h2>
+<table>
+    <tr>
+        <th>Naziv:</th>
+        <td>
+            <input type="text" value="{{ agencija.ime }}" [(ngModel)]="naziv" />
+        </td>
+    </tr>
+    <tr>
+        <th>Adresa:</th>
+        <td>
+            <input type="text" value="{{ agencija.adresa }}" [(ngModel)]="adresa" />
+        </td>
+    </tr>
+    <tr>
+        <th>Opis:</th>
+        <td>
+            <input type="text" value="{{ agencija.opis }}" [(ngModel)]="opis" />
+        </td>
+    </tr>
+    <tr>
+        <th>Maticni broj:</th>
+        <td>
+            <input type="text" value="{{ agencija.maticniBroj }}" [(ngModel)]="maticniBroj" />
+        </td>
+    </tr>
+    <tr>
+        <th>Email:</th>
+        <td>
+            <input type="text" value="{{ agencija.email }}" [(ngModel)]="email" />
+        </td>
+    </tr>
+    <tr>
+        <th>Telefon:</th>
+        <td>
+            <input type="text" value="{{ agencija.telefon }}" [(ngModel)]="telefon" />
+        </td>
+    </tr>
+    <tr>
+        <th>Logotip:</th>
+        <td>
+            <img src="/assets/korisnici/{{ agencija.logotip }}" />
+            <input type="file" accept=".jpeg, .jpg, .png" (change)="izabranFajl($event)" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button (click)="azuriraj()">Azuriraj</button>
+        </td>
+    </tr>
+</table>

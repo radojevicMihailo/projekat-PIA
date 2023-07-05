@@ -1,0 +1,45 @@
+<button (click)="odjava()">Odjavi se</button>
+<p>
+    <a routerLink="/objekti">Objekti</a> || <a routerLink="/agencije">Agencije</a> ||
+    <a routerLink="/posloviKlijent">Poslovi</a> ||
+    <a routerLink="/promenaLozinke">Promena lozinke</a>
+</p>
+<h2>Profil</h2>
+<table>
+    <tr>
+        <th>Ime:</th>
+        <td>
+            <input type="text" value="{{ klijent.ime }}" [(ngModel)]="ime" />
+        </td>
+    </tr>
+    <tr>
+        <th>Prezime:</th>
+        <td>
+            <input type="text" value="{{ klijent.prezime }}" [(ngModel)]="prezime" />
+        </td>
+    </tr>
+    <tr>
+        <th>Email:</th>
+        <td>
+            <input type="text" value="{{ klijent.email }}" [(ngModel)]="email" />
+        </td>
+    </tr>
+    <tr>
+        <th>Telefon:</th>
+        <td>
+            <input type="text" value="{{ klijent.telefon }}" [(ngModel)]="telefon" />
+        </td>
+    </tr>
+    <tr>
+        <th>Profilna slika:</th>
+        <td>
+            <img src="/assets/korisnici/{{ klijent.profilnaSlika }}" />
+            <input type="file" accept=".jpeg, .jpg, .png" (change)="izabranFajl($event)" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button (click)="azuriraj()">Azuriraj</button>
+        </td>
+    </tr>
+</table>
